@@ -21,10 +21,21 @@ const actions = {
             .then(data => commit("setWeatherDataValues", data))
             .finally(() => commit('setLoading', false, {root: true}))
     },
+    async fetchWeatherDataAwait({commit}) {
+        commit('setLoading', true, {root: true})
+        const data = await weatherDataApiService.fetchAll();
+        commit("setWeatherDataValues", data)
+        commit('setLoading', false, {root: true})
+    },
     async createWeatherData({commit}, data) {
         commit('setLoading', true, {root: true})
         return weatherDataApiService.create(data)
             .finally(() => commit('setLoading', false, {root: true}))
+    },
+    async createWeatherDataAwait({commit}, data) {
+        commit('setLoading', true, {root: true})
+        await weatherDataApiService.create(data)
+        commit('setLoading', false, {root: true})
     }
 }
 

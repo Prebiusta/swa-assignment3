@@ -74,6 +74,10 @@
           :weather-data-values-loading="loading"
       />
     </v-col>
+    <div>
+      <input v-model="text" style="border: 1px solid black">
+      <p>{{text}}</p>
+    </div>
   </v-row>
 </template>
 
@@ -90,6 +94,7 @@ export default {
   components: {CustomTimePicker, CityWrapper},
   data() {
     return {
+      text: "Initial text",
       selectedWeatherValuesCity: "",
       weatherValuesStartTime: "",
       weatherValuesEndTime: "",
