@@ -47,7 +47,7 @@ const Forecast = () => {
 
     useEffect(() => {
         initForecast()
-    }, [])
+    })
 
     const renderSelect = () => (
         <div className="input-group">

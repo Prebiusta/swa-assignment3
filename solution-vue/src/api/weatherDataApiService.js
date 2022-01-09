@@ -1,7 +1,7 @@
 import {client} from "@/api/weatherReportAxios";
 
 const fetchAll = (client) => () => {
-    return client.get("/data").then(resposne => resposne.data)
+    return client.get("/data").then(response => response.data)
 }
 
 const create = (client) => (request) => {

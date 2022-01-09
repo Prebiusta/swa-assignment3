@@ -15,8 +15,8 @@ const fetchForecastSuccess = (state, action) => {
     return updateObject(state, {forecast: action.data, forecastLoading: false, error: null})
 }
 
-const fetchForecastFailed = (state, _) => {
-    return updateObject(state, {forecastLoading: false, error: null})
+const fetchForecastFailed = (state, action) => {
+    return updateObject(state, {forecastLoading: false, error: action.error})
 }
 
 const forecastReducer = (state = initialState, action) => {

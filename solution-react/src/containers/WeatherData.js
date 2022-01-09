@@ -99,7 +99,7 @@ const WeatherData = () => {
 
     useEffect(() => {
         initWeatherData()
-    }, [])
+    })
 
     return (
         <div>
